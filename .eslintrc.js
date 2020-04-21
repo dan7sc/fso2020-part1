@@ -6,7 +6,7 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
-        //"plugin:react/recommended"
+        "plugin:react/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -23,9 +23,8 @@ module.exports = {
         "react"
     ],
     "rules": {
-        //"semi": ["error", "never"],
         "semi": ["error", "never"],
         "no-extra-semi": "error",
-        "semi-style": 0,
+        "react/prop-types": [ 0 ]
     }
 };
