@@ -8,21 +8,28 @@ const Statistics = (props) => {
 
     if (good || neutral || bad) {
         return (
-            <div>
-              <Statistic text='good' value={good} />
-              <Statistic text='neutral' value={neutral} />
-              <Statistic text='bad' value={bad} />
-              <Statistic text='all' value={good + neutral + bad} />
-              <Statistic text='average' value={((1 * good) + (0 * neutral) + (-1 * bad)) / (good + neutral + bad)} />
-              <Statistic text='positive' value={100 * (good / (good + neutral + bad)) + ' %'} />
-            </div>
+            <table>
+              <tbody>
+                <Statistic text='good' value={good} />
+                <Statistic text='neutral' value={neutral} />
+                <Statistic text='bad' value={bad} />
+                <Statistic text='all' value={good + neutral + bad} />
+                <Statistic text='average' value={((1 * good) + (0 * neutral) + (-1 * bad)) / (good + neutral + bad)} />
+                <Statistic text='positive' value={100 * (good / (good + neutral + bad)) + ' %'} />
+              </tbody>
+            </table>
         )
     }
     return <div>No feedback given</div>
 }
 
 const Statistic = (props) => {
-    return <div>{props.text} {props.value}</div>
+    return (
+        <tr id={props.text}>
+          <td>{props.text}</td>
+          <td>{props.value}</td>
+        </tr>
+    )
 }
 
 const Button = (props) => {
